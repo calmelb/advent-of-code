@@ -14,12 +14,6 @@
         },
         {
             "type": "command",
-            "name": "Git Add",
-            "program": "git",
-            "args": ["add ."]
-        },
-        {
-            "type": "command",
             "name": "Git Push",
             "program": "git",
             "args": ["push"]
