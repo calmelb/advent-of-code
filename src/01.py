@@ -37,16 +37,29 @@ The challenge involves calories, with below being an example list:
 Find the Elf carrying the most Calories. How many total Calories is that Elf carrying?
 
 # '''
-# print(input_str)
-# print(repr(input_str))
-sections = input_str.split('\n\n')
-print(sections)
+def get_neat_list(input):
+    sections = input.split('\n\n')
 
-split_string = []
-for sub in sections:
-    split_string.append(sub.split('\n'))
-
+    split_string = []
+    for sub in sections:
+        split_string.append(sub.split('\n'))
     
-print(split_string)
+    return(split_string)
+
+def find_max(elf_list):
+    elf_totals = []
+
+    for elf in elf_list:
+        elf_total = 0
+        for cal in elf:
+            elf_total = elf_total + int(cal)
+        elf_totals.append(elf_total)
+
+    return(max(elf_totals))
 
 
+# MAIN PROGRAM
+neat_list = get_neat_list(input_str)
+largest_cal = find_max(neat_list)
+
+print("Largest amount of calories in the group is: "+ str(largest_cal))

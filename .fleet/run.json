@@ -1,0 +1,28 @@
+{
+    "configurations": [
+        {
+            "type": "command",
+            "name": "New Day",
+            "program": "make",
+            "args": ["new"]
+        },
+        {
+            "type": "command",
+            "name": "Renew README",
+            "program": "make",
+            "args": ["readme"]
+        },
+        {
+            "type": "command",
+            "name": "Git Add",
+            "program": "git",
+            "args": ["add ."]
+        },
+        {
+            "type": "command",
+            "name": "Git Push",
+            "program": "git",
+            "args": ["push"]
+        }
+    ]
+}
