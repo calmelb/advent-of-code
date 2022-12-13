@@ -46,20 +46,31 @@ def get_neat_list(input):
     
     return(split_string)
 
-def find_max(elf_list):
+def combine_list(elf_list):
     elf_totals = []
 
     for elf in elf_list:
         elf_total = 0
         for cal in elf:
             elf_total = elf_total + int(cal)
-        elf_totals.append(elf_total)
+        elf_totals.append(int(elf_total))
 
-    return(max(elf_totals))
+    return((elf_totals))
+
+def three_largest(elf_list):
+    elf_list.sort(reverse=True)
+    # print(elf_list)
+    top_three = elf_list[0:3]
+    totals = 0
+    for i in top_three:
+        totals = totals + i
+    return totals
 
 
 # MAIN PROGRAM
 neat_list = get_neat_list(input_str)
-largest_cal = find_max(neat_list)
+organised_list = combine_list(neat_list)
 
-print("Largest amount of calories in the group is: "+ str(largest_cal))
+
+print("Largest amount of calories in the group is: "+ str(max(organised_list)))
+print("Sum of top three calories in the group is: "+ str(three_largest(organised_list)))
